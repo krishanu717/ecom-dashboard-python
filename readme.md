@@ -334,4 +334,5 @@ Full-Stack & Data Analytics Developer
 
 This project is intended for academic and educational purposes.
 
-Co-authored-by: isthatpratham <premdebnath08@gmail.com>
+Co-authored-by: @isthatpratham <premdebnath08@gmail.com>
+
