@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecommerce Sales Analytics Dashboard</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@500;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/static/css/style.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <div class="container-fluid p-4">
+        <!-- Header Block -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <div class="header-brutal text-center position-relative">
+                    <h1 class="header-title">ECOMMERCE SALES ANALYTICS DASHBOARD</h1>
+                    <p class="header-subtitle mb-0">Data Analytics Project</p>
+                    <button id="darkModeToggle"
+                        class="btn btn-brutal position-absolute top-50 end-0 translate-middle-y me-4 py-2 px-3">
+                        Toggle Dark Mode
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Filter Buttons Placeholder -->
+        <div class="row pb-4 text-center">
+            <div class="col-12">
+                <style>
+                    .active-filter {
+                        background: #000 !important;
+                        color: #fff !important;
+                    }
+                </style>
+                <button id="btnLast30Days" class="btn btn-brutal filter-btn mx-2">Last 30 Days</button>
+                <button id="btnLast6Months" class="btn btn-brutal filter-btn mx-2">Last 6 Months</button>
+                <button id="btnAllTime" class="btn btn-brutal filter-btn active-filter mx-2">All Time</button>
+            </div>
+        </div>
+
+        <!-- KPI Cards Row -->
+        <div class="row g-4 mb-5">
+            <div class="col-md-3">
+                <div class="card card-brutal text-center">
+                    <div class="kpi-label">Total Revenue</div>
+                    <div class="kpi-number text-success" id="revenueCard">---</div>
+                    <div id="revenueGrowth" class="growth-text mt-2 fw-bold" style="font-size: 1.1rem; color: #1a535c;">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card card-brutal text-center">
+                    <div class="kpi-label">Total Orders</div>
+                    <div class="kpi-number text-primary" id="ordersCard">---</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card card-brutal text-center">
+                    <div class="kpi-label">Total Products</div>
+                    <div class="kpi-number text-info" id="productsCard">---</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card card-brutal text-center">
+                    <div class="kpi-label">Total Cities</div>
+                    <div class="kpi-number text-warning" id="citiesCard">---</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts Section Row 1 -->
+        <div class="row g-4 mb-4">
+            <div class="col-md-6">
+                <div class="chart-container">
+                    <h3 class="chart-title">Monthly Sales Trend</h3>
+                    <canvas id="monthlySalesChart" height="250"></canvas>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="chart-container">
+                    <h3 class="chart-title">Top Products</h3>
+                    <canvas id="topProductsChart" height="250"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts Section Row 2 -->
+        <div class="row g-4 mb-5">
+            <div class="col-md-6">
+                <div class="chart-container">
+                    <h3 class="chart-title">Sales by Category</h3>
+                    <canvas id="categorySalesChart" height="250"></canvas>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="chart-container">
+                    <h3 class="chart-title">Top Cities</h3>
+                    <canvas id="topCitiesChart" height="250"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts Section Row 3 -->
+        <div class="row g-4 mb-5">
+            <div class="col-md-12">
+                <div class="chart-container">
+                    <h3 class="chart-title">Top States by Revenue</h3>
+                    <canvas id="topStatesChart" height="120"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="footer-brutal text-center">
+                    <p class="mb-0">Ecommerce Analytics Dashboard &mdash; Academic Project</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Dashboard Scripts -->
+    <script src="/static/js/dashboard.js"></script>
+
+</body>
+
+</html>
